@@ -29,7 +29,7 @@ public class IndexController {
 	 * POST requests to http://localhost:8080/hello/addPerson goes here. The new
 	 * person data is passed from HTML from and bound into the Person object.
 	 */
-	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
+	@RequestMapping(value = "/addSlanina", method = RequestMethod.POST)
 	public String addSlanina(@ModelAttribute Slanina s) {
 		slaninaService.add(s);
 		return "redirect:/";
