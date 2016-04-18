@@ -23,7 +23,7 @@ public class SlaninaService {
 	  public List<Slanina> getAll(){
 		  List<Slanina> slanine = new ArrayList<Slanina>();
 
-		  slanine = em.createQuery("SELECT FROM Slanina s", Slanina.class).getResultList();
+		  slanine = em.createQuery("SELECT s FROM Slanina s", Slanina.class).getResultList();
 		  
 		  return slanine;
 	  }
