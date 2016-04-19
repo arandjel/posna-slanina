@@ -3,7 +3,6 @@
 
 <p>
 	<b>${slanina.name}</b>
-	
 	<br/>
 	<span style="font-size: 80%">(ID = ${slanina.id} | SKILL = ${slanina.skill})</span>
 </p>

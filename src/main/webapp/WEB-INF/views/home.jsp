@@ -37,7 +37,7 @@
 		<div class="col-lg-6">
 			<div class="panel panel-default">
 			  	<div class="panel-heading">All Slaninas</div>
-			  	<div class="panel-body">
+			  	<div class="panel-body" id="allSlaninasList">
 					<c:forEach var="s" items="${slanine}">
 						<sl:slanina slanina="${s}"/>
 					</c:forEach>
@@ -147,14 +147,20 @@
 		    		xhr.setRequestHeader("Accept", "application/json");
 		    		xhr.setRequestHeader("Content-Type", "application/json");
 		    	},
-		    	success: function(smartphone) {
+		    	success: function(slanina) {
 		    		var respContent = "";
 
 					respContent += "<span class='success'>Slanina was created: [";
-					respContent += smartphone.name + " : ";
-					respContent += smartphone.skill + "]</span><br><br>";
+					respContent += slanina.name + " : ";
+					respContent += slanina.skill + "]</span><br><br>";
 
-		    		$("#slaninaFormResponse").html(respContent);   		
+		    		$("#slaninaFormResponse").html(respContent);
+		    		
+		    		var slaninaContent = "";
+		    		slaninaContent += "<p><b>" + slanina.name + "</b><br/>";
+		    		slaninaContent += "<span style='font-size: 80%'>(ID = " + slanina.id + " | SKILL = " + slanina.skill + ")</span></p>";
+		    		
+		    		$("#allSlaninasList").append(slaninaContent);
 		    	}
 		    });
 
