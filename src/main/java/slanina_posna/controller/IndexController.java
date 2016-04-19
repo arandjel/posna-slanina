@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,6 +28,8 @@ public class IndexController {
 	public String listAll(Model model) {
 
 		model.addAttribute("slanine", slaninaService.getAll());
+		model.addAttribute("slaninaModel", new Slanina());
+
 
 		return "home";
 	}
@@ -73,4 +77,21 @@ public class IndexController {
 
 		return result;
 	}
+	
+	/**
+	 * AJAX POST create Slanina method
+	 * @param slanina
+	 * @return
+	 */
+	@RequestMapping(value="/create", method=RequestMethod.POST,
+			produces = MediaType.APPLICATION_JSON_VALUE, 
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Slanina createSmartphone(@RequestBody Slanina slanina) {
+		
+		System.out.println("Create slanina mehtod");
+		
+		slaninaService.add(slanina);
+		return slanina;
+	}
+
 }
