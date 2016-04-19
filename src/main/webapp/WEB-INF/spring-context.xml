@@ -15,7 +15,7 @@
    
   <!-- Resolve view name into jsp file located on /WEB-INF -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/" />
+    <property name="prefix" value="/WEB-INF/views/" />
     <property name="suffix" value=".jsp" />
   </bean>
    
@@ -40,5 +40,7 @@
    
   <!-- Enable @Transactional annotation -->
   <tx:annotation-driven/>
+ 
+  <mvc:resources mapping="/resources/**" location="/resources/" />
  
 </beans>
