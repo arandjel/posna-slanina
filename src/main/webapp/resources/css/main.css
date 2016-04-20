@@ -1,10 +1,6 @@
 body {
-	font-family: Roboto, Arial;
-	font-weight: 300;
-}
-
-h1 {
-	color: #555;
+	margin: 0px;
+	padding: 0px;
 }
 
 .autocomplete-suggestions {
@@ -27,4 +23,11 @@ h1 {
 .autocomplete-suggestions strong {
 	/*font-weight: 400;*/
 	color: #3399FF;
+}
+
+#slaninaFormResponse span{    
+	background: #56cde1;
+    padding: 15px;
+    color: #FFF;
+    border-radius: 5px;
 }
