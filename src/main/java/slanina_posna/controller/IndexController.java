@@ -35,8 +35,8 @@ public class IndexController {
 	}
 
 	/**
-	 * POST requests to http://localhost:8080/hello/addPerson goes here. The new
-	 * person data is passed from HTML from and bound into the Person object.
+	 * POST requests to http://localhost:8080/posna-slanina/addSlanina goes here. The new
+	 * slanina data is passed from HTML from and bound into the Slanina object.
 	 */
 	@RequestMapping(value = "/addSlanina", method = RequestMethod.POST)
 	public String addSlanina(@ModelAttribute Slanina s) {
@@ -86,9 +86,9 @@ public class IndexController {
 	@RequestMapping(value="/create", method=RequestMethod.POST,
 			produces = MediaType.APPLICATION_JSON_VALUE, 
 			consumes = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody Slanina createSmartphone(@RequestBody Slanina slanina) {
+	public @ResponseBody Slanina createSlanina(@RequestBody Slanina slanina) {
 		
-		System.out.println("Create slanina mehtod");
+		System.out.println("Create slanina method");
 		
 		slaninaService.add(slanina);
 		return slanina;

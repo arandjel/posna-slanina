@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.hibernate.mapping.Array;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
